@@ -1,0 +1,12 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="~bmsi\.util\.Diff.*" />
+    </Match>
+    <Match>
+        <Class name="~bmsi\.util\.DiffPrint.*" />
+    </Match>
+    <Match>
+        <Class name="~hudson\.plugins\.jobConfigHistory\.ConfigInfoComparator"/>
+        <Bug code="SnVI"/>
+    </Match>
+</FindBugsFilter>
