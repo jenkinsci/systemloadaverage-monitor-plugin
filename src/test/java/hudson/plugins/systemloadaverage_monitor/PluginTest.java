@@ -47,14 +47,13 @@ public class PluginTest extends HudsonTestCase {
     @LocalData
     public void testOfExistingPlugin() throws IOException, SAXException, RuntimeException, InterruptedException {
         final ComputerPage computerPage = new ComputerPage();
-        assertTrue("Get Load System Average failed",(Hudson.getInstance().getComputers())[0].getChannel().call(new MonitorTask()).equalsIgnoreCase("-1"));
-        assertTrue("Table Column System Load Average doesn't exist", (computerPage.checkComputerTableColumn()>0));
+              assertTrue("Table Column System Load Average doesn't exist", (computerPage.checkComputerTableColumn()>0));
 
     }
     @LocalData
     public void testOfGetSystemLoadAverage() throws IOException, SAXException, RuntimeException, InterruptedException {
-
-        assertTrue("Get Load System Average failed",(Hudson.getInstance().getComputers())[0].getChannel().call(new MonitorTask()).equalsIgnoreCase("-1"));
+        String load = (Hudson.getInstance().getComputers())[0].getChannel().call(new MonitorTask());
+        assertTrue("Get Load System Average failed. Return Value is "+load,load.equalsIgnoreCase("-1"));
 
     }
 }
