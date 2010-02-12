@@ -49,7 +49,7 @@ public class SystemLoadAverageMonitor extends NodeMonitor {
     };
 
     final static class MonitorTask implements
-            Callable < String, RuntimeException > {
+            Callable<String, RuntimeException>{
         private static final long serialVersionUID = 1L;
 
         /**
@@ -63,4 +63,3 @@ public class SystemLoadAverageMonitor extends NodeMonitor {
         }
     }
 }
-
