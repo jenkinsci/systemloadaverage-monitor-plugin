@@ -52,9 +52,8 @@ public class PluginTest extends HudsonTestCase {
     }
     @LocalData
     public void testOfGetSystemLoadAverage() throws IOException, SAXException, RuntimeException, InterruptedException {
-        String load = (Hudson.getInstance().getComputers())[0].getChannel().call(new MonitorTask());
-        assertTrue("Get Load System Average failed. Return Value is "+load,load.equalsIgnoreCase("-1"));
-
+        int load = Integer.parseInt((Hudson.getInstance().getComputers())[0].getChannel().call(new MonitorTask()));
+        assertTrue("Get Load System Average failed. Return Value is "+load,load >=-1);
     }
 }
 
