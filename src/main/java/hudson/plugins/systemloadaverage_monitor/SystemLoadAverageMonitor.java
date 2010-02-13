@@ -3,7 +3,6 @@ package hudson.plugins.systemloadaverage_monitor;
 import hudson.Extension;
 import hudson.model.Computer;
 import hudson.model.Hudson;
-
 import hudson.node_monitors.AbstractNodeMonitorDescriptor;
 import hudson.node_monitors.NodeMonitor;
 import hudson.remoting.Callable;
@@ -71,7 +70,7 @@ public class SystemLoadAverageMonitor extends NodeMonitor {
         public String call() {
             final OperatingSystemMXBean opsysMXbean = ManagementFactory
                     .getOperatingSystemMXBean();
-            return String.valueOf((long) opsysMXbean.getSystemLoadAverage());
+            return String.format("%04.1f", opsysMXbean.getSystemLoadAverage());
         }
     }
 }
