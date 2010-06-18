@@ -110,6 +110,38 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip><!-- tests now run by maven-junit-plugin -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- see http://maven-junit-plugin.kenai.com/ for more info -->
+                <groupId>com.sun.maven</groupId>
+                <artifactId>maven-junit-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <testFailureIgnore>true</testFailureIgnore>
+                            <fork>true</fork>
+                            <concurrency>1</concurrency> <!-- -1 means # of processors in the system -->
+                            <argLine>-XX:MaxPermSize=192m -Xmx256m -Dfile.encoding=UTF-8</argLine>
+                            <systemProperties>
+                                <property>
+                                    <!-- use AntClassLoader that supports predictable file handle release -->
+                                    <name>hudson.ClassicPluginStrategy.useAntClassLoader</name>
+                                    <value>true</value>
+                                </property>
+                            </systemProperties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <reporting>
