@@ -26,8 +26,14 @@
             <email>stefanbrausch@dev.java.net</email>
             <timezone>+1</timezone>
         </developer>
-
     </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/jenkinsci/systemloadaverage-monitor-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:jenkinsci/systemloadaverage-monitor-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/systemloadaverage-monitor-plugin</url>
+    </scm>
+
     <repositories>
         <repository>
             <id>jenkins-artifacts</id>
