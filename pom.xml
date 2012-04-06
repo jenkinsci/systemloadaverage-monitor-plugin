@@ -36,8 +36,8 @@
 
     <repositories>
         <repository>
-            <id>jenkins-artifacts</id>
-            <url>http://maven.jenkins-ci.org/content/groups/artifacts/</url>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
         </repository>
     </repositories>
 
@@ -192,4 +192,12 @@
             </plugin>
         </plugins>
     </reporting>
-</project>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>repo.jenkins-ci.org</id>
+            <url>http://repo.jenkins-ci.org/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+</project>  
+
