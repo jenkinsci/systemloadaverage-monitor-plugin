@@ -12,8 +12,8 @@ import java.util.List;
 import org.jvnet.hudson.test.HudsonTestCase;
 import org.xml.sax.SAXException;
 
-import com.gargoylesoftware.htmlunit.html.HtmlElement;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.htmlunit.html.HtmlElement;
+import org.htmlunit.html.HtmlPage;
 
 
 /**
